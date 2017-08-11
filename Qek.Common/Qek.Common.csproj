@@ -51,6 +51,7 @@
     <Compile Include="Dto\Paginate\PageableQueryParam.cs" />
     <Compile Include="Dto\Paginate\PaginateResult.cs" />
     <Compile Include="Dto\SignApkKey\SignApkKeyLog.cs" />
+    <Compile Include="Reflection\ReflectionUtil.cs" />
     <Compile Include="SignApkKeyTool.cs" />
     <Compile Include="ValidationHelper.cs" />
     <Compile Include="ConfigHelper.cs" />

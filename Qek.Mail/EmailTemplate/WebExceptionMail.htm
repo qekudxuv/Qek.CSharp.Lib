@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+<html>
+<head>
+    <style type='text/css'>
+        table
+        {
+            font: 12px Calibri;
+            border-collapse: collapse;
+            border-width: 1px;
+            border-style: solid;
+            border-color: gray;
+        }
+        th
+        {
+            background-color: #72C530;
+            color: #FFFFFF;
+            font-weight: normal;
+        }
+        th,td
+        {
+            text-align: left;
+            padding: 6px;
+        }
+        .alt
+        {
+            background-color: #ECECD8;
+        }
+    </style>
+    <title>Mail Content</title>
+</head>
+<body>
+    <table border='1' width='600' style='font-size:12px; font-family: Verdana;'>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Date and Time: </th>
+            <td>${Time}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>User: </th>
+            <td>${Account}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Remote Address: </th>
+            <td>${IPAddress}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Request URL: </th>
+            <td>${URL}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Input: </th>
+            <td>${Input}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Source: </th>
+            <td>${Source}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Exception Type: </th>
+            <td>${ExceptionType}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Exception Message: </th>
+            <td>${ExceptionMsg}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>StackTrace: </th>
+            <td>${StackTrace}</td>
+        </tr>
+
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>InnerException Source: </th>
+            <td>${InnerExceptionSource}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>InnerException Type: </th>
+            <td>${InnerExceptionType}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>InnerException Message: </th>
+            <td>${InnerExceptionMsg}</td>
+        </tr>
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>InnerException StackTrace: </th>
+            <td>${InnerExceptionStackTrace}</td>
+        </tr>   
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Browser Type: </th>
+            <td>${ClientInfo}</td>
+        </tr>     
+        <tr>
+            <th width='200' bgcolor='#EEEEEE' align='left'>Additional Info: </th>
+            <td><font color='red'>${AddInfo}</font></td>
+        </tr>      
+    </table> 
+</body>
+</html>

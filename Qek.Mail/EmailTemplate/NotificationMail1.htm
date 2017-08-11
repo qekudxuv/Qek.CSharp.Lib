@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+<html>
+	<head>
+		<style type='text/css'>
+			table
+			{
+				font: 12px Verdana;
+				border-collapse: collapse;
+				width: 600px;
+				border: solid 1px gray;
+			}
+			th
+			{
+				background-color: #thbackgroundcolor; /*#4cb8ca;#72C530*/
+				color: #FFFFFF;
+				font-weight: normal;
+				width:150px;
+			}
+			th,td
+			{
+				text-align: left;
+				padding: 6px;
+                border-bottom: solid 1px gray;
+			}
+			.content
+			{
+				font: 12px Verdana;
+				margin:10px;
+			}
+			/*.content div {
+			    margin:10px;
+			    width:200px;
+			}*/
+			.alt
+			{
+				background-color: #ECECD8;
+			}
+		</style>
+		<title>Mail Content</title>
+	</head>
+	<body>
+	    <div class="content">
+	        ${Content}
+	    </div>
+	</body>
+</html>

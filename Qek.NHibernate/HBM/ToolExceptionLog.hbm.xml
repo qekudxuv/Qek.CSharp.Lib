@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Qek.NHibernate"
+                   namespace="Qek.NHibernate.Model">
+  <class name="ToolExceptionLogModel" table="Log_ToolException" lazy="true">
+
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+
+    <property name="Input" column="Input" type="System.String"/>
+    <property name="MachineName" column="MachineName" type="System.String"/>
+    <property name="ProcessName" column="ProcessName" type="System.String"/>
+    <property name="OS" column="OS" type="System.String"/>
+
+    <property name="Source" column="Source" type="System.String"/>
+    <property name="ExceptionType" column="ExceptionType" type="System.String"/>
+    <property name="ExceptionMessage" column="ExceptionMessage" type="System.String"/>
+    <property name="StackTrace" column="StackTrace" type="System.String"/>
+
+    <property name="InnerExceptionSource" column="InnerExceptionSource" type="System.String"/>
+    <property name="InnerExceptionType" column="InnerExceptionType" type="System.String"/>
+    <property name="InnerExceptionMessage" column="InnerExceptionMessage" type="System.String"/>
+    <property name="InnerExceptionStackTrace" column="InnerExceptionStackTrace" type="System.String"/>
+    <property name="CreateTime" column="CreateTime" type="System.DateTime"/>
+
+  </class>
+</hibernate-mapping>

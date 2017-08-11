@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Qek.NHibernate"
+                   namespace="Qek.NHibernate.Model">
+  <class name="SignApkKeyLogModel" table="Log_SignApkKey">
+
+    <id name="ID" column="UID" type="System.Int32" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+    <!--AnsiString Varchar  8000-->
+    <!--String     NVarchar 4000-->
+    <property name="SignPurpose"   column="SignPurpose" type="AnsiString" length="100" />    
+    <property name="TaskTableName" column="TaskTableName" type="AnsiString" length="100" />
+    <property name="TaskFK"        column="TaskFK"        type="System.Int64" />
+    
+    <property name="OverallResult" column="OverallResult" type="System.Boolean" not-null="true"/>
+    <property name="InputCommand"  column="InputCommand" type="AnsiString" length="500" not-null="true"/>
+    <property name="DataMessage"   column="DataMessage"   type="AnsiString" length="8000" not-null="true"/>
+    <property name="ErrMessage"    column="ErrMessage"    type="AnsiString" length="8000"/>
+    
+    <property name="CreateTime" column="CreateTime" type="System.DateTime" not-null="true">
+      <column name="CreateTime" default="GetDate()"></column>
+    </property>
+  </class>
+  
+</hibernate-mapping>

@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace UA.Common.Tool
+namespace Qek.Common.Tool
 {
     /// <summary>
     /// Sign Apk(s) Key Tool

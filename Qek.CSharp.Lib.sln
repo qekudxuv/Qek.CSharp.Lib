@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.DB", "Qek.DB\Qek.DB.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.UnitTestUtil", "Qek.UnitTestUtil\Qek.UnitTestUtil.csproj", "{AC7DA339-2264-42AD-99AA-02D6C7C189F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.Err", "Qek.Err\Qek.Err.csproj", "{3E9177A2-B89A-47F3-B9BE-4CCCD7853341}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{AC7DA339-2264-42AD-99AA-02D6C7C189F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7DA339-2264-42AD-99AA-02D6C7C189F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7DA339-2264-42AD-99AA-02D6C7C189F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9177A2-B89A-47F3-B9BE-4CCCD7853341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9177A2-B89A-47F3-B9BE-4CCCD7853341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9177A2-B89A-47F3-B9BE-4CCCD7853341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9177A2-B89A-47F3-B9BE-4CCCD7853341}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

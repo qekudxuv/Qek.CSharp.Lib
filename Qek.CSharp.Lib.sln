@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.NHibernate", "Qek.NHibe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.IO", "Qek.IO\Qek.IO.csproj", "{CCB98048-05D1-4337-8929-CD50A90A4CA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qek.DB", "Qek.DB\Qek.DB.csproj", "{D649EBA9-0D8F-450A-843C-F65057864F7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CCB98048-05D1-4337-8929-CD50A90A4CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB98048-05D1-4337-8929-CD50A90A4CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB98048-05D1-4337-8929-CD50A90A4CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D649EBA9-0D8F-450A-843C-F65057864F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D649EBA9-0D8F-450A-843C-F65057864F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D649EBA9-0D8F-450A-843C-F65057864F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D649EBA9-0D8F-450A-843C-F65057864F7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

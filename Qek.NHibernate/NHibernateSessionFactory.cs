@@ -1,6 +1,8 @@
-﻿using NHibernate;
+﻿using FluentNHibernate.Cfg;
+using NHibernate;
 using Qek.Common;
 using System;
+using System.Reflection;
 using System.Web;
 
 namespace Qek.NHibernate
@@ -31,6 +33,8 @@ namespace Qek.NHibernate
         private static ISession _session; //this session is not used in web
 
         private static ProjectType _projectType = ConfigHelper.GetAppSetting<ProjectType>("ProjectType");
+        private static string _fluentMappingAssemblys = ConfigHelper.GetAppSettingOrDefault("FluentMappingAssemblys");
+        private static string[] _fluentMappingAssemblyAry = _fluentMappingAssemblys.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
         private static bool IsWeb
         { get { return _projectType == ProjectType.WebApplication || _projectType == ProjectType.WebSite; } }
@@ -42,7 +46,10 @@ namespace Qek.NHibernate
                 if (_sessionFactory == null)
                 {
                     var config = new NHibernateCfgBuilder().Build();
-                    _sessionFactory = config.BuildSessionFactory();
+                    //_sessionFactory = config.BuildSessionFactory();
+                    _sessionFactory = Fluently.Configure(config)
+                        .Mappings(FluentMapping)
+                        .BuildSessionFactory();
                     if (_sessionFactory == null)
                     {
                         throw new InvalidOperationException("Could not build SessionFactory");
@@ -51,6 +58,14 @@ namespace Qek.NHibernate
                 return _sessionFactory;
             }
         }
+
+        private static Action<MappingConfiguration> FluentMapping = (m) =>
+        {
+            foreach (string assembly in _fluentMappingAssemblyAry)
+            {
+                m.FluentMappings.AddFromAssembly(Assembly.Load(assembly));
+            }
+        };
 
         #region NHibernate Sessions
         /// <summary>

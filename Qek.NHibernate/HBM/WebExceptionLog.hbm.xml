@@ -23,7 +23,10 @@
     <property name="InnerExceptionType" column="InnerExceptionType" type="System.String"/>
     <property name="InnerExceptionMessage" column="InnerExceptionMessage" type="System.String"/>
     <property name="InnerExceptionStackTrace" column="InnerExceptionStackTrace" type="System.String"/>
-    <property name="CreateTime" column="CreateTime" type="System.DateTime"/>
+
+    <property name="CreateTime" column="CreateTime" type="System.DateTime" not-null="true">
+      <column name="CreateTime" default="GetDate()"></column>
+    </property>
 
   </class>
 </hibernate-mapping>

@@ -15,14 +15,17 @@
 
     <property name="Source" column="Source" type="System.String"/>
     <property name="ExceptionType" column="ExceptionType" type="System.String"/>
-    <property name="ExceptionMessage" column="ExceptionMessage" type="System.String"/>
-    <property name="StackTrace" column="StackTrace" type="System.String"/>
+    <property name="ExceptionMessage" column="ExceptionMessage" type="StringClob"/>
+    <property name="StackTrace" column="StackTrace" type="StringClob"/>
 
     <property name="InnerExceptionSource" column="InnerExceptionSource" type="System.String"/>
     <property name="InnerExceptionType" column="InnerExceptionType" type="System.String"/>
-    <property name="InnerExceptionMessage" column="InnerExceptionMessage" type="System.String"/>
-    <property name="InnerExceptionStackTrace" column="InnerExceptionStackTrace" type="System.String"/>
-    <property name="CreateTime" column="CreateTime" type="System.DateTime"/>
+    <property name="InnerExceptionMessage" column="InnerExceptionMessage" type="StringClob"/>
+    <property name="InnerExceptionStackTrace" column="InnerExceptionStackTrace" type="StringClob"/>
+
+    <property name="CreateTime" column="CreateTime" type="System.DateTime" not-null="true">
+      <column name="CreateTime" default="GetDate()"></column>
+    </property>
 
   </class>
 </hibernate-mapping>

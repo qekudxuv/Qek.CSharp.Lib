@@ -10,9 +10,9 @@
     <property name="Task"          column="Task"          type="AnsiString" length="200"  not-null="true"/>
     <property name="TaskTableName" column="TaskTableName" type="AnsiString" length="100"  not-null="false"/>
     <property name="TaskFK"        column="TaskFK"        type="System.Int64" not-null="false"/>
-    <property name="InputCommand"  column="InputCommand"  type="AnsiString" length="4000" not-null="true"/>
-    <property name="DataMessage"   column="DataMessage"   type="AnsiString" length="8000" not-null="true"/>
-    <property name="ErrMessage"    column="ErrMessage"    type="AnsiString" length="8000"/>
+    <property name="InputCommand"  column="InputCommand"  type="StringClob" not-null="true"/>
+    <property name="DataMessage"   column="DataMessage"   type="StringClob" not-null="true"/>
+    <property name="ErrMessage"    column="ErrMessage"    type="StringClob" />
  
     <property name="TotalInputCommand" column="TotalInputCommand" type="System.Int32" not-null="true"/>
     <property name="TotalSucceedCommand" column="TotalSucceedCommand" type="System.Int32" not-null="true"/>

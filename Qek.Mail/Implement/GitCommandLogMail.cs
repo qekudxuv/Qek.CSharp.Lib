@@ -1,5 +1,4 @@
-﻿using Qek.Common;
-using Qek.Common.Dto.Git;
+﻿using Qek.Common.Dto.Git;
 
 namespace Qek.Mail
 {
@@ -8,19 +7,19 @@ namespace Qek.Mail
     /// </summary>
     public class GitCommandLogMail : AbstractGitCommandLogMail
     {
-        private string _adminMailReceiver = ConfigHelper.GetAppSetting("GitCommandLogMailReceiver");
-        private string _systemShortName = ConfigHelper.GetAppSetting("SystemShortName");
+        private string _mailReceivers;
         private string _mailSubject;
 
-        public GitCommandLogMail(GitCommandLog log, string mailSubject)
+        public GitCommandLogMail(GitCommandLog log, string mailSubject, string mailReceivers)
             : base(log)
         {
             this._mailSubject = mailSubject;
+            this._mailReceivers = mailReceivers;
         }
 
         protected override void SetMailReceiver()
         {
-            base._mySmtpMail.SetMailTo(_adminMailReceiver);
+            base._mySmtpMail.SetMailTo(_mailReceivers);
         }
 
         protected override void SetMailAttachment()
@@ -30,9 +29,7 @@ namespace Qek.Mail
 
         protected override string GetMailSubject()
         {
-            return string.Format("[{0}][{1}]",
-                _systemShortName,
-                _mailSubject);
+            return _mailSubject;
         }
     }
 }

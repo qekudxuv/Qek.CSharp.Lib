@@ -1,5 +1,4 @@
-﻿using Qek.Common;
-using Qek.Common.Dto.Git;
+﻿using Qek.Common.Dto.Git;
 using System.Collections.Generic;
 using System.IO;
 
@@ -12,11 +11,8 @@ namespace Qek.Git
     /// </summary>
     public class MyGitBash : BaseGitBash
     {
-        private static string _gitBashFile = ConfigHelper.GetAppSetting("GitBashFile");
-        private static string _workingDirectory = ConfigHelper.GetAppSetting("WorkingDirectory");
-
-        public MyGitBash()
-            : base(_gitBashFile, _workingDirectory)
+        public MyGitBash(string gitBashFile, string workingDirectory)
+            : base(gitBashFile, workingDirectory)
         {
         }
 

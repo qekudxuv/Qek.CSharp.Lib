@@ -1,5 +1,4 @@
-﻿using Qek.Common;
-using Qek.Common.Dto.Git;
+﻿using Qek.Common.Dto.Git;
 using Qek.Err;
 using System;
 using System.Collections.Generic;
@@ -11,20 +10,22 @@ namespace Qek.Git
     /// </summary>
     public abstract class AbstractTagTask<T> where T : IGitReleaseModel
     {
-        protected string _systemShortName = ConfigHelper.GetAppSetting("SystemShortName");
-        protected string _gitAccount = ConfigHelper.GetAppSetting("GitAccount");
-        protected string _gitServer = ConfigHelper.GetAppSetting("GitServer");
-        protected string _gitAccountEmail = ConfigHelper.GetAppSetting("GitAccountEmail");
+        private string _gitServer = string.Empty;
+        private string _gitAccount = string.Empty;
+        private string _gitAccountEmail = string.Empty;
 
-        protected MyGitBash _gitBash = new MyGitBash();
+        protected MyGitBash _gitBash = null;
         protected IExceptionHandler _exceptionHandler = null;
 
-        public AbstractTagTask()
-        {
-        }
 
-        public AbstractTagTask(IExceptionHandler exceptionHandler)
+        public AbstractTagTask(string gitServer, string gitAccount, string gitAccountEmail,
+                               string gitBashFile, string workingDirectory,
+                               IExceptionHandler exceptionHandler = null)
         {
+            this._gitAccount = gitAccount;
+            this._gitServer = gitServer;
+            this._gitAccountEmail = gitAccountEmail;
+            this._gitBash = new MyGitBash(gitBashFile, workingDirectory);
             this._exceptionHandler = exceptionHandler;
         }
 
@@ -58,6 +59,7 @@ namespace Qek.Git
             GitCommandLog log = new GitCommandLog();
             try
             {
+                string processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
                 string repoName = model.GitName;
                 bool isRepoExist = _gitBash.RepoExist(repoName);
                 if (string.IsNullOrEmpty(repoName))
@@ -97,7 +99,7 @@ namespace Qek.Git
                 else
                 {
                     log.Merge(_gitBash.TagCommitID(repoName, model.TagName, model.ReleaseCommitID,
-                        string.Format("{0} tool tagged", _systemShortName)));
+                        string.Format("{0} tool tagged", processName)));
                     if (!log.OverallResult)
                     {
                         throw new GenericModelException<GitCommandLog>(log, string.Format("[Fatal] {0} tagging failed", repoName));
